@@ -11,6 +11,8 @@ TagManager:
   - PortalB
   - Pylon
   - ArenaSpawner
+  - Doorway
+  - Enemy
   layers:
   - Default
   - TransparentFX

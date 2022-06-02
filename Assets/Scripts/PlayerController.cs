@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 prevoiusPlayerPosition;
     private float z = 0;
     private bool isWalking = false;
-    private Vector3 lastGroundCenterPosition;
+
 
 
     void Start()
@@ -47,7 +47,10 @@ public class PlayerController : MonoBehaviour
         {
             setPortalB();
         }
-
+        if (Input.GetKey(KeyCode.E))
+        {
+            openDoor();
+        }
         if (Input.GetKey(KeyCode.W))
         {
             PlayerMoveForward();
@@ -82,6 +85,8 @@ public class PlayerController : MonoBehaviour
             isWalking = false;
         }
         prevoiusPlayerPosition = PlayerRB.transform.position;
+
+        ArenaSpawnHandler.PlayerPosition = transform.position;
   
     }
 
@@ -161,7 +166,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-  
+    private void openDoor()
+    {
+        var Ray = PlayerCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(Ray, out hit))
+        {
+            targetPosition = hit.point;
+            Debug.Log(hit.collider.gameObject.tag);
+            if (hit.collider.gameObject.tag == "ArenaSpawner")
+            {
+                ArenaSpawnHandler.SpawnNewArena = true;
+                Animator animator = hit.collider.gameObject.GetComponentInParent<Animator>();
+                animator.SetBool("isOpen", true);
+
+            }
+
+
+        }
+    }
+
+
 
 
     private void OnCollisionEnter(Collision collision)
@@ -169,8 +195,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isJumping = false;
-  
-
+            ArenaSpawnHandler.LastArenaCenter = collision.gameObject.transform.position;
         }
         if (collision.gameObject.tag == "PortalA")
         {
@@ -182,10 +207,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = SpawnPointA.transform.position;
             transform.rotation = SpawnPointA.transform.rotation;
-
         }
-
-
+        if (collision.gameObject.tag == "Doorway")
+        {
+            isJumping = false;
+        }
     }
 
 }

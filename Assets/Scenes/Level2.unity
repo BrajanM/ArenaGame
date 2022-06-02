@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473348325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0.24, z: 0}
+  m_LocalPosition: {x: 0.07, y: 0.24, z: -21.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478679821}
@@ -582,6 +582,51 @@ Transform:
   m_Father: {fileID: 478679821}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &978672750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978672752}
+  - component: {fileID: 978672751}
+  m_Layer: 0
+  m_Name: ArenaSpawnHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &978672751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978672750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b533aaeab50b69d4690f18fb35f23942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Arena: {fileID: 5093713715103853997, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
+  ArenaCenetrOffset: 70
+--- !u!4 &978672752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978672750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024242356
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +939,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2409761931112842345, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
+      propertyPath: m_TagString
+      value: ArenaSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141187925854203039, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141187927040439344, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3674910515212465143, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -936,6 +993,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3674910515212465143, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352537582578357014, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
+      propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5093713715103853997, guid: a8abe53c88cecf34f8ae6b82885aff0a, type: 3}
